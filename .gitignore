@@ -57,3 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# dist files
+dist/css
+dist/js
+
+# package-lock.json
+package-lock.json
+
