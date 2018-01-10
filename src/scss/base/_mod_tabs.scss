@@ -1,0 +1,93 @@
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    // @include borderMark(orange);
+
+}
+
+.tabs-table {
+    border-collapse: collapse;
+}
+
+.tabs-table__header, 
+.tabs-table__footer {
+    font-family: $font-stack;
+    font-size: map-get($fontSizes, tabsPanel);
+    color: map-get($colors, tabsPanelFont);
+    text-align: center;
+}
+
+.tabs-table__cell {
+    border: solid 1px map-get($colors, tabsPanelBorder);
+    @include tabsPanelTableCell();
+
+}
+
+.tabs-table__cell--header,
+.tabs-table__cell--footer {
+    @include tabsPanelTableCell();
+}
+
+.tabs-table__cell--inst,
+.tabs-table__cell-btn {
+    @include tabsPanelTableCell();
+    width: $tabsPanelCellSize + $tabsPanelCellSizeExpand;
+    
+}
+
+.tabs__btn--icon,
+.tabs__btn--key {
+    background: transparent;
+    border: 0px; 
+    cursor:pointer;
+}
+
+.tabs__inst-svg {
+    max-width: 60px;
+    max-height: 60px;
+    cursor:pointer;
+}
+
+.tabs__btn--key {
+    @include tabsKeyIcon(10px, 50px, 75px, 'dark');
+    text-transform: uppercase;
+    color: map-get($colors, tabsPanelFont);
+    font-size: map-get($fontSizes, tabsPanelKey);        
+    position: relative;
+    transition: 0.4s all;
+
+    &:hover {
+        background-color: #EA3E3A;
+        color: white;
+    }
+
+    &::after{
+        content: "";
+        @include tabsKeyIcon(8px, 41px, 67px, 'light');        
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        transition: 0.4s all;
+    }
+
+    &:hover::after{
+        content: "";
+        border-color: #D01D1B;
+             
+    }
+}
+
+.tabs-table__cell--active {
+    background-color: rgb(208, 29, 27);
+    transition: 0.4s all;
+
+    &:hover {
+        background-color: rgba(208, 29, 27,0.3);
+    }
+
+}
+
+
+

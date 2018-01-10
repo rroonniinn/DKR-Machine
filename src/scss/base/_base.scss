@@ -1,0 +1,68 @@
+
+/* __________Global vars__________ */
+
+$font-stack: 'Overpass Mono', monospace;
+$width-app-desk: 900px;
+$tabsPanelCellSize: 75px;
+$tabsPanelCellSizeExpand: 40px;
+
+$colors: (
+    tabsPanelFont: #717171,
+    tabsPanelBorder: #DCDCDC,
+    tabsBtnKeyDark: #717171,	
+    tabsBtnKeyLight: #b3b3b3,	
+);
+
+$fontSizes: (
+    tabsPanel: 16px,
+    tabsPanelKey: 20px,
+	
+);
+
+@mixin borderMark($color) {
+    border: 1px dotted $color;
+}
+
+@mixin tabsPanelTableCell() {
+    width: $tabsPanelCellSize;
+    height: $tabsPanelCellSize;
+    text-align: center;  
+    padding: 0;
+}
+
+@mixin tabsKeyIcon($borderRad, $height, $width, $color) {
+    
+    @if $color == 'dark' {
+        border: 1px solid map-get($colors, tabsBtnKeyDark);
+    } @else {
+        border: 1px solid map-get($colors, tabsBtnKeyLight);
+    }
+    
+    border-radius: $borderRad;
+    height: $height;
+    width: $width;
+}   
+
+
+
+
+
+/* __________Layout__________ */
+
+body {
+    font-family: $font-stack;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.wrapper {
+    width: $width-app-desk;
+    // @include borderMark(red);
+    
+    
+}
+
+

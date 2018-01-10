@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220px" height="103px" viewBox="0 0 220 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-610.000000, -48.000000)" font-weight="normal">
+        <g id="Design" transform="translate(-252.000000, -53.000000)">
+            <g id="Logo" transform="translate(862.000000, 101.000000)">
+                <text id="Drum-Keeper" font-family="BirchStd, Birch Std" font-size="70" fill="#D01D1B">
+                    <tspan x="0.985" y="53">Drum Keeper</tspan>
+                </text>
+                <g id="Machine" transform="translate(38.000000, 36.000000)" fill="#030303" font-family="ArkanaScriptRough, Arkana Script Rough" font-size="80">
+                    <text id="Machine-Down" stroke="#FFFFFF" stroke-width="2">
+                        <tspan x="0.38" y="60">Machine</tspan>
+                    </text>
+                    <text id="Machine-Top">
+                        <tspan x="0.38" y="60">Machine</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -4,13 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>Drum Keeper Machine 1.00</title>
     
 </head>
 <body>
-    
-Hello World
+    <div class="wrapper">
+      
+        <div class="app">
 
+            <!-- Logo / Controls panel -->
+
+            <header class="controls-panel">                
+                <embed id="logo" src="img/logo.svg"/>               
+                <button class="controls-play"></button>                                 
+                <div class="controls-tempo">
+                    <button class="controls-tempo-down">-</button>
+                    <form action="">
+                        <input type="text" name="" id="" class="controls-tempo-bpm" value="130">
+                    </form>
+                    <button class="controls-tempo-up">+</button>
+                </div> 
+            </header>
+
+            <!-- Tablature panel -->
+
+            <section class="tabs">                
+                <table class="tabs-table">
+                    <tbody>
+                    <tr class="tabs-table__header">
+                        <td class="tabs-table__cell--header"></td>
+                        <td class="tabs-table__cell--header">1</td>
+                        <td class="tabs-table__cell--header">&</td>
+                        <td class="tabs-table__cell--header">2</td>
+                        <td class="tabs-table__cell--header">&</td>
+                        <td class="tabs-table__cell--header">3</td>
+                        <td class="tabs-table__cell--header">&</td>
+                        <td class="tabs-table__cell--header">4</td>
+                        <td class="tabs-table__cell--header">&</td>
+                        <td class="tabs-table__cell--header"></td>
+                    </tr>
+                    <tr id="tabs-inst1">
+                        <td class="tabs-table__cell--inst">
+                            <button class="tabs__btn--icon">
+                                <embed class="tabs__inst-svg" src="img/inst-crash.svg"/></button></td>
+                        <td class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell-btn">
+                            <button class="tabs__btn--key">c</button></td>
+                    </tr>
+                    <tr id="tabs-inst2">
+                        <td class="tabs-table__cell--inst">
+                            <button class="tabs__btn--icon">
+                                <embed class="tabs__inst-svg" src="img/inst-hh.svg"/></button></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell-btn">
+                            <button class="tabs__btn--key">h</button></td>
+                    </tr>
+                    <tr id="tabs-inst3">
+                        <td class="tabs-table__cell--inst">
+                            <button class="tabs__btn--icon">      
+                                <embed class="tabs__inst-svg" src="img/inst-tom1.svg"/></button></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell-btn">
+                            <button class="tabs__btn--key">t</button></td>
+                    </tr>
+                    <tr id="tabs-inst4">
+                        <td class="tabs-table__cell--inst">
+                            <button class="tabs__btn--icon">
+                                <embed class="tabs__inst-svg" src="img/inst-snare.svg"/></button></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell-btn">
+                            <button class="tabs__btn--key">s</button></td>
+                    </tr>    
+                    <tr id="tabs-inst5">
+                        <td class="tabs-table__cell--inst">
+                            <button class="tabs__btn--icon">
+                                <embed class="tabs__inst-svg" src="img/inst-kick.svg"/></button></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell"></td>
+                        <td class="tabs-table__cell-btn">
+                            <button class="tabs__btn--key">k</button></td>
+                    </tr>                                    
+                    <tr class="tabs-table__header">
+                        <td class="tabs-table__cell--footer"></td>
+                        <td class="tabs-table__cell--footer">1</td>
+                        <td class="tabs-table__cell--footer">&</td>
+                        <td class="tabs-table__cell--footer">2</td>
+                        <td class="tabs-table__cell--footer">&</td>
+                        <td class="tabs-table__cell--footer">3</td>
+                        <td class="tabs-table__cell--footer">&</td>
+                        <td class="tabs-table__cell--footer">4</td>
+                        <td class="tabs-table__cell--footer">&</td>
+                        <td class="tabs-table__cell--footer"></td>
+                    </tr>        
+                </tbody>                                
+                </table> 
+
+            </section>
+
+            <!-- Notes App panel -->
+
+            <section class="notes-panel">
+                <div class="notes-app">notes</div>
+
+            </section>
+        </div><!-- app ends -->
+
+    </div><!-- wrapper ends -->
 </body>
 </html>

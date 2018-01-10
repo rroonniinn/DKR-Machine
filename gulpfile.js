@@ -24,7 +24,7 @@ gulp.task("server", function() {
 
 
 gulp.task('sass', function () {
-    return gulp.src('./src/scss/main.scss')
+    return gulp.src('./src/scss/**/*.scss')
         .pipe(plumber({
             errorHandler : ourErrorHandler
         }))
