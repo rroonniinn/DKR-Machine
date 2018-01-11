@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     // @include borderMark(orange);
-
 }
 
 .tabs-table {
@@ -21,7 +20,6 @@
 .tabs-table__cell {
     border: solid 1px map-get($colors, tabsPanelBorder);
     @include tabsPanelTableCell();
-
 }
 
 .tabs-table__cell--header,
@@ -33,20 +31,21 @@
 .tabs-table__cell-btn {
     @include tabsPanelTableCell();
     width: $tabsPanelCellSize + $tabsPanelCellSizeExpand;
-    
 }
 
 .tabs__btn--icon,
 .tabs__btn--key {
     background: transparent;
     border: 0px; 
-    cursor:pointer;
+    // cursor:pointer;
 }
 
 .tabs__inst-svg {
     max-width: 60px;
-    max-height: 60px;
+    height: 60px;
     cursor:pointer;
+    display: inline-block;
+    
 }
 
 .tabs__btn--key {
@@ -72,11 +71,10 @@
         transition: 0.4s all;
     }
 
-    &:hover::after{
-        content: "";
-        border-color: #D01D1B;
-             
-    }
+    // &:hover::after{
+    //     content: "";
+    //     border-color: #D01D1B; 
+    // }
 }
 
 .tabs-table__cell--active {
@@ -86,7 +84,6 @@
     &:hover {
         background-color: rgba(208, 29, 27,0.3);
     }
-
 }
 
 

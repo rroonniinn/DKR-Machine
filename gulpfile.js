@@ -1,6 +1,9 @@
 const gulp = require('gulp'); 
 const sass = require('gulp-sass');
+let babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
+const pump = require('pump');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -40,13 +43,25 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream({match: "**/*.css"}));
   });
 
+  gulp.task('jsCompress', function (cb) {
+    pump([
+          gulp.src('./src/js/*.js'),
+          babel({presets: ['env']}),
+          uglify(),
+          gulp.dest('./dist/js')
+      ],
+      cb
+    );
+  });
+
   gulp.task('watch', function () {
     gulp.watch('./src/scss/**/*.scss', ['sass']);
+    gulp.watch('./src/js/**/*.js', ['jsCompress']).on("change", browserSync.reload);
     gulp.watch("**/*.html").on("change", browserSync.reload);
   });
 
 
 gulp.task('default', function() {
     console.log ('------ Rozpoczynamy pracę -----');
-    gulp.start(['sass','server','watch']);
+    gulp.start(['sass','jsCompress','server','watch']);
 })
