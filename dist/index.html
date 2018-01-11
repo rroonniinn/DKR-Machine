@@ -18,20 +18,20 @@
 
             <header class="controls-panel">                
                 <embed id="logo" src="img/logo.svg"/>               
-                <button class="controls-play"></button>                                 
+                <button id="btn-play-stop" class="controls-play"></button>                                 
                 <div class="controls-tempo">
-                    <button class="controls-tempo-down">-</button>
-                    <form action="">
-                        <input type="text" name="" id="" class="controls-tempo-bpm" value="130">
+                    <button class="controls-tempo-down" id="btn-tempo__down">-</button>
+                    <form action="" id="form-bmp">
+                        <input type="text" name="" id="form-bmp__input" class="controls-tempo-bpm">
                     </form>
-                    <button class="controls-tempo-up">+</button>
+                    <button class="controls-tempo-up" id="btn-tempo__up">+</button>
                 </div> 
             </header>
 
             <!-- Tablature panel -->
 
             <section class="tabs">                
-                <table class="tabs-table">
+                <table class="tabs-table">    
                     <tbody>
                     <tr class="tabs-table__header">
                         <td class="tabs-table__cell--header"></td>
@@ -51,14 +51,14 @@
                                 <img class="tabs__inst-svg" src="img/inst-crash.svg"/>
                             
                             </button></td>
-                        <td class="tabs-table__cell tabs-table__cell--active"></td>
-                        <td class="tabs-table__cell tabs-table__cell--active"></td>
-                        <td class="tabs-table__cell tabs-table__cell--active"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
+                        <td data-x="0" data-y="0" class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td data-x="0" data-y="1" class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td data-x="0" data-y="2" class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td data-x="0" data-y="3" class="tabs-table__cell"></td>
+                        <td data-x="0" data-y="4" class="tabs-table__cell"></td>
+                        <td data-x="0" data-y="5" class="tabs-table__cell"></td>
+                        <td data-x="0" data-y="6" class="tabs-table__cell"></td>
+                        <td data-x="0" data-y="7" class="tabs-table__cell"></td>
                         <td class="tabs-table__cell-btn">
                             <button class="tabs__btn--key">c</button></td>
                     </tr>
@@ -66,14 +66,14 @@
                         <td class="tabs-table__cell--inst">
                             <button class="tabs__btn--icon">
                                 <embed class="tabs__inst-svg" src="img/inst-hh.svg"/></button></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
+                        <td id="i1p0" class="tabs-table__cell"></td>
+                        <td id="i1p1" class="tabs-table__cell"></td>
+                        <td id="i1p2" class="tabs-table__cell"></td>
+                        <td id="i1p3" class="tabs-table__cell"></td>
+                        <td id="i1p4" class="tabs-table__cell"></td>
+                        <td id="i1p5" class="tabs-table__cell"></td>
+                        <td id="i1p6" class="tabs-table__cell"></td>
+                        <td id="i1p7" class="tabs-table__cell"></td>
                         <td class="tabs-table__cell-btn">
                             <button class="tabs__btn--key">h</button></td>
                     </tr>
@@ -81,14 +81,14 @@
                         <td class="tabs-table__cell--inst">
                             <button class="tabs__btn--icon">      
                                 <embed class="tabs__inst-svg" src="img/inst-tom1.svg"/></button></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell tabs-table__cell--active"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
+                        <td id="i2p0" class="tabs-table__cell"></td>
+                        <td id="i2p1" class="tabs-table__cell"></td>
+                        <td id="i2p2" class="tabs-table__cell"></td>
+                        <td id="i2p3" class="tabs-table__cell"></td>
+                        <td id="i2p4" class="tabs-table__cell"></td>
+                        <td id="i2p5" class="tabs-table__cell tabs-table__cell--active"></td>
+                        <td id="i2p6" class="tabs-table__cell"></td>
+                        <td id="i2p7" class="tabs-table__cell"></td>
                         <td class="tabs-table__cell-btn">
                             <button class="tabs__btn--key">t</button></td>
                     </tr>
@@ -96,14 +96,14 @@
                         <td class="tabs-table__cell--inst">
                             <button class="tabs__btn--icon">
                                 <embed class="tabs__inst-svg" src="img/inst-snare.svg"/></button></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
+                        <td id="i3p0" class="tabs-table__cell"></td>
+                        <td id="i3p1" class="tabs-table__cell"></td>
+                        <td id="i3p2" class="tabs-table__cell"></td>
+                        <td id="i3p3" class="tabs-table__cell"></td>
+                        <td id="i3p4" class="tabs-table__cell"></td>
+                        <td id="i3p5" class="tabs-table__cell"></td>
+                        <td id="i3p6" class="tabs-table__cell"></td>
+                        <td id="i3p7" class="tabs-table__cell"></td>
                         <td class="tabs-table__cell-btn">
                             <button class="tabs__btn--key">s</button></td>
                     </tr>    
@@ -111,14 +111,14 @@
                         <td class="tabs-table__cell--inst">
                             <button class="tabs__btn--icon">
                                 <embed class="tabs__inst-svg" src="img/inst-kick.svg"/></button></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
-                        <td class="tabs-table__cell"></td>
+                        <td id="i4p0" class="tabs-table__cell"></td>
+                        <td id="i4p1" class="tabs-table__cell"></td>
+                        <td id="i4p2" class="tabs-table__cell"></td>
+                        <td id="i4p3" class="tabs-table__cell"></td>
+                        <td id="i4p4" class="tabs-table__cell"></td>
+                        <td id="i4p5" class="tabs-table__cell"></td>
+                        <td id="i4p6" class="tabs-table__cell"></td>
+                        <td id="i4p7" class="tabs-table__cell"></td>
                         <td class="tabs-table__cell-btn">
                             <button class="tabs__btn--key">k</button></td>
                     </tr>                                    

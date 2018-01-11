@@ -46,8 +46,10 @@ gulp.task('sass', function () {
   gulp.task('jsCompress', function (cb) {
     pump([
           gulp.src('./src/js/main.js'),
+          sourcemaps.init(),
           babel({presets: ['env']}),
           uglify(),
+          sourcemaps.write('.'),
           gulp.dest('./dist/js')
       ],
       cb

@@ -1,4 +1,6 @@
 
+
+
 .controls-panel {
     padding-top: 50px;
     padding-bottom: 30px;
@@ -22,6 +24,8 @@
         left: 50%;    
         transform: translate(-50%);
         box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+        transition: 0.4s all;
+        cursor:pointer;
 
         &:before {
             content: "";
@@ -44,6 +48,11 @@
             left:41px;  
             top: 50px-16px; 
         }
+        
+        &:hover {
+            transform: translate(-50%) scale(.9,.9);
+        }
+
     }
 
     .controls-tempo {
@@ -61,6 +70,13 @@
             letter-spacing: 0;
             border: none;
             background: transparent;
+            cursor:pointer;
+            transition: 0.4s all;
+
+            &:hover {
+                // background-color: red;
+                transform: scale(2,2);
+            }
         }
 
         .controls-tempo-bpm {
