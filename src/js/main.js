@@ -7,13 +7,19 @@ const bpmForm = document.querySelector('#form-bmp');
 const bpmInput = document.querySelector('#form-bmp__input');
 const bpmUp = document.querySelector('#btn-tempo__up');
 const bpmDown = document.querySelector('#btn-tempo__down');
+const allCells = document.querySelector('.tabs-table');
 
-//___w tym pól tabeli__
 
-//ins 1:
-// const cells1inst = document.querySelectorAll([id]);
+allCells.addEventListener('click',function(ev){
+    console.log ( ev.target.dataset.y );
+    ev.target.dataset.active = '1'; 
+    ev.target.classList.toggle('tabs-table__cell--active')
+})
 
-// id="i0p---"
+
+
+
+
 
 
 
@@ -102,14 +108,16 @@ function keyPressed(ev) {
     }
 }
 
+/* Oval: */
+
 document.addEventListener('keypress',keyPressed);
 
 // _____________ Obsługa timelineu _______________ //
 
 const timeline = [
     [0,0,0,0,0,0,0,0], // crash
-    [1,1,1,1,1,1,1,1], // hh
-    [0,0,0,0,0,0,0,1], // tom
+    [1,0,1,0,1,0,1,0], // hh
+    [0,1,0,1,0,1,0,1], // tom
     [0,0,1,0,0,0,1,0], // snare
     [1,0,0,1,1,0,0,0], // kick
 ]
