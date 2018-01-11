@@ -100,7 +100,7 @@ document.addEventListener('keypress',keyPressed);
 // _____________ Obsługa timelineu _______________ //
 
 const timeline = [
-    [1,0,0,0,0,0,0,0], // crash
+    [0,0,0,0,0,0,0,0], // crash
     [1,0,1,0,1,0,1,0], // hh
     [0,1,0,1,0,1,0,1], // tom
     [0,0,1,0,0,0,1,0], // snare
@@ -156,28 +156,45 @@ for (let i=0;i<timeline.length;i++) {
         let statusStart = timeline[i][j];        
         
         if (statusStart===1) {
-            document.querySelector(`#x${j}y${i}`).classList.add('tabs-table__cell--active');
-            
-            
+            // to jest też słabe bo szukam po ID a nie po data secie - nalealby to przerobć na data set jakoś
+            document.querySelector(`#x${j}y${i}`).classList.add('tabs-table__cell--active');            
         }
-        
-        
-
     }
-
 }
 
 
-// on / off kwadratu na boardzie (clik)
+// on / off kwadratu na boardzie (click)
 
 allCells.addEventListener('click',function(ev){
-    console.log (`X: ${ev.target.dataset.x} Y: ${ev.target.dataset.y} `);
 
-    if (ev.target.dataset.x) {
+    if (ev.target.hasAttribute('id')) {
+        // zasadniczo to jest słabe.. gdyż jeśłi pojawi się inny td z id to się sypnie. Było na data set x, ale ponieważ nie mogę wyszukać we wcześniejszym kroku tego, więc zmieniłem
+
 
         ev.target.dataset.active = '1'; 
         ev.target.classList.toggle('tabs-table__cell--active')
-    } 
+
+        const cellId = ev.target.getAttribute('id');
+        // console.log ( cellId );
+        const yCord = Number(cellId.charAt(3)); //też słabe - jeśłi będzie więcej niż 1 cyfra (np. 10) - czyli więcej ytaktów to się sypnie
+        const xCord = Number(cellId.charAt(1));
+
+        console.log ( `Y: ${yCord}  X: ${xCord} ` ); 
+        console.log ( timeline[yCord][xCord] );
+
+        if (timeline[yCord][xCord] === 0) {
+            timeline[yCord][xCord] = 1;
+        } else {
+            timeline[yCord][xCord] = 0;
+        }
+
+
+
+    }
+    
+     
+
+     
 
     
 
@@ -185,7 +202,6 @@ allCells.addEventListener('click',function(ev){
 
 
 // budowanie tablicy na podstawie kwadratów 
-// ustawienie kolorów na bordzie takich samych jak tablica
 
 
 
