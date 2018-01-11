@@ -9,21 +9,6 @@ const bpmUp = document.querySelector('#btn-tempo__up');
 const bpmDown = document.querySelector('#btn-tempo__down');
 const allCells = document.querySelector('.tabs-table');
 
-
-allCells.addEventListener('click',function(ev){
-    console.log ( ev.target.dataset.y );
-    ev.target.dataset.active = '1'; 
-    ev.target.classList.toggle('tabs-table__cell--active')
-})
-
-
-
-
-
-
-
-
-
 // Funkcje startowe
 
 function bpmToMms(bpm) {
@@ -115,7 +100,7 @@ document.addEventListener('keypress',keyPressed);
 // _____________ Obsługa timelineu _______________ //
 
 const timeline = [
-    [0,0,0,0,0,0,0,0], // crash
+    [1,0,0,0,0,0,0,0], // crash
     [1,0,1,0,1,0,1,0], // hh
     [0,1,0,1,0,1,0,1], // tom
     [0,0,1,0,0,0,1,0], // snare
@@ -162,11 +147,45 @@ playerBtn.addEventListener('click', chooseMusic);
 
 // __________ Obsługa boardu.... ______________
 
-// on / off kwadratu
+// Render startowego stanu boardu:
+
+
+
+for (let i=0;i<timeline.length;i++) {
+    for (let j=0;j<timeline[i].length;j++) {
+        let statusStart = timeline[i][j];        
+        
+        if (statusStart===1) {
+            document.querySelector(`#x${j}y${i}`).classList.add('tabs-table__cell--active');
+            
+            
+        }
+        
+        
+
+    }
+
+}
+
+
+// on / off kwadratu na boardzie (clik)
+
+allCells.addEventListener('click',function(ev){
+    console.log (`X: ${ev.target.dataset.x} Y: ${ev.target.dataset.y} `);
+
+    if (ev.target.dataset.x) {
+
+        ev.target.dataset.active = '1'; 
+        ev.target.classList.toggle('tabs-table__cell--active')
+    } 
+
+    
+
+})
+
+
 // budowanie tablicy na podstawie kwadratów 
-
-
-
+// ustawienie kolorów na bordzie takich samych jak tablica
 
 
 
