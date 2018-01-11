@@ -28,6 +28,7 @@ $fontSizes: (
     height: $tabsPanelCellSize;
     text-align: center;  
     padding: 0;
+    
 }
 
 @mixin tabsKeyIcon($borderRad, $height, $width, $color) {

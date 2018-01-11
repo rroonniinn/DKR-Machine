@@ -9,6 +9,20 @@ const bpmUp = document.querySelector('#btn-tempo__up');
 const bpmDown = document.querySelector('#btn-tempo__down');
 const allCells = document.querySelector('.tabs-table');
 
+
+const cellsColums = [
+    document.querySelectorAll('[data-x="0"]'),
+    document.querySelectorAll('[data-x="1"]'),
+    document.querySelectorAll('[data-x="2"]'),
+    document.querySelectorAll('[data-x="3"]'),
+    document.querySelectorAll('[data-x="4"]'),
+    document.querySelectorAll('[data-x="5"]'),
+    document.querySelectorAll('[data-x="6"]'),
+    document.querySelectorAll('[data-x="7"]')
+]
+
+
+
 // Funkcje startowe
 
 function bpmToMms(bpm) {
@@ -27,11 +41,13 @@ let mms = bpmToMms(tempo);
 
 //  Biblioteka dzięków (Howler)
 
-const soundCrash = new Howl({src: ['../sound/crash.mp3']});
+const soundCrash = new Howl({src: ['../sound/crash.mp3'],volume: 0.4});
 const soundHh = new Howl({src: ['../sound/hh.mp3']});
 const soundKick = new Howl({src: ['../sound/kick.mp3']});
 const soundSnare = new Howl({src: ['../sound/snare.mp3']});
 const soundTom = new Howl({src: ['../sound/tom.mp3']});
+
+console.log ( soundCrash.volume() );
 
 
 // _____________ Obsługa zmiany tempa _________________ //
@@ -116,11 +132,50 @@ function playMusic() {
         if (timeline[3][counter-1] != 0) { soundSnare.play();}  // inst 4    
         if (timeline[4][counter-1] != 0) { soundKick.play();}  // inst 5        
         
+        
+        // Zaznaczanie kolumny na której znajduje się playhead
+        
+    
+        for (let i=0;i<cellsColums[counter-1].length;i++) {
+            cellsColums[counter-1][i].innerHTML = '<div class="playheadActive"></div>' ;
+        } 
+        if (counter!=1) {
+            for (let i=0;i<cellsColums[counter-2].length;i++) {
+                cellsColums[counter-2][i].innerHTML = '' ;
+            }   
+        } else {
+            for (let i=0;i<cellsColums[counter+6].length;i++) {
+                cellsColums[counter+6][i].innerHTML = '' ;
+            }
+        }
+
+
+        // for (let i=0;i<cellsColums[counter-1].length;i++) {
+        //     cellsColums[counter-1][i].innerText = 'x' ;
+        // } 
+        // if (counter!=1) {
+        //     for (let i=0;i<cellsColums[counter-2].length;i++) {
+        //         cellsColums[counter-2][i].innerText = '' ;
+        //     }   
+        // } else {
+        //     for (let i=0;i<cellsColums[counter+6].length;i++) {
+        //         cellsColums[counter+6][i].innerText = '' ;
+        //     }
+        // }
+
+
+
         counter++;
         
         if (counter === 9) {
             counter = 1;
         }
+
+        
+        
+
+
+
     
 }
 
@@ -139,6 +194,15 @@ function chooseMusic(ev) {
     }
 
     toPlay = false;        
+    // czyszczenie głowicy (bo zostawała widoczna)
+
+    for (var i=0;i<cellsColums.length;i++) {
+        for (var j=0;j<cellsColums[i].length;j++) {
+            cellsColums[i][j].innerHTML = '' ;
+        }
+    }
+
+
 }
 
 
@@ -188,8 +252,6 @@ allCells.addEventListener('click',function(ev){
             timeline[yCord][xCord] = 0;
         }
 
-
-
     }
     
      
@@ -200,8 +262,6 @@ allCells.addEventListener('click',function(ev){
 
 })
 
-
-// budowanie tablicy na podstawie kwadratów 
 
 
 

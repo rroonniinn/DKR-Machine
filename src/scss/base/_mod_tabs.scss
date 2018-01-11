@@ -17,9 +17,12 @@
     text-align: center;
 }
 
+
 .tabs-table__cell {
     border: solid 1px map-get($colors, tabsPanelBorder);
     @include tabsPanelTableCell();
+
+
 }
 
 .tabs-table__cell--header,
@@ -90,6 +93,16 @@
 
 [data-x] {
     cursor:pointer;
+}
+
+// to się pojawia jako zanaczie gdzei jest głowica
+
+div.playheadActive {
+    height: 90%;
+    width: 4px;
+    background-color: #6F0E0E;
+    margin-left: 35px; // słabe to, ale w tym momencie nie wiem jak automatycznie wucentrować tego diva
+
 }
 
 
