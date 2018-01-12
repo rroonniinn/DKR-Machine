@@ -14,27 +14,7 @@
     
     .controls-play {
 
-        background: #FFFFFF;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        border: none;
-        position: absolute;
-        top: 83px+50px; 
-        left: 50%;    
-        transform: translate(-50%);
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-        transition: 0.4s all;
-        cursor:pointer;
-
-        &:before {
-            content: "";
-            height: 87px;
-            width: 87px;
-            background-image: linear-gradient(-180deg, #EA3E3A 0%, #D01D1B 100%);
-            display: block;
-            border-radius: 50%;
-        }
+        @include playButton();
 
         &:after {
             content: "";
@@ -45,15 +25,42 @@
             width: 28px;
             z-index: 3;
             position: absolute;
-            left:41px;  
-            top: 50px-16px; 
+            left:34px;  
+            top: 29px; 
         }
         
         &:hover {
             transform: translate(-50%) scale(.9,.9);
         }
-
     }
+
+    // togluję tym w JS po klikniciu na button play
+    .controls-pause {
+
+        @include playButton();
+        background-image: linear-gradient(-180deg, #D01D1B 0%, #D01D1B 100%);
+
+        &:after {
+            content: "";
+            display: block;
+            background-image: url('../img/pause.svg');
+            background-repeat: no-repeat;
+            height: 32px;
+            width: 28px;
+            z-index: 3;
+            position: absolute;
+            left:34px;  
+            top: 29px; 
+        }
+        
+        &:hover {
+            transform: translate(-50%) scale(1.1,1.1);
+        }
+    }
+
+
+
+
 
     .controls-tempo {
 

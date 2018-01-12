@@ -31,6 +31,22 @@ $fontSizes: (
     
 }
 
+@mixin playButton() {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 6px solid white;
+    background-image: linear-gradient(-180deg, #EA3E3A 0%, #D01D1B 100%);
+    position: absolute;
+    top: 83px+50px; 
+    left: 50%;    
+    transform: translate(-50%);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    transition: 0.4s all;
+    cursor:pointer;
+}
+
+
 @mixin tabsKeyIcon($borderRad, $height, $width, $color) {
     
     @if $color == 'dark' {

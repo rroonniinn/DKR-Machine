@@ -21,6 +21,8 @@ const cellsColums = [
     document.querySelectorAll('[data-x="7"]')
 ]
 
+const keyboardKeys = document.querySelectorAll('[id^=btn-key-]');
+// console.log ( keyboardKeys );
 
 
 // Funkcje startowe
@@ -41,13 +43,14 @@ let mms = bpmToMms(tempo);
 
 //  Biblioteka dzięków (Howler)
 
-const soundCrash = new Howl({src: ['../sound/crash.mp3'],volume: 0.4});
-const soundHh = new Howl({src: ['../sound/hh.mp3']});
-const soundKick = new Howl({src: ['../sound/kick.mp3']});
-const soundSnare = new Howl({src: ['../sound/snare.mp3']});
-const soundTom = new Howl({src: ['../sound/tom.mp3']});
+const soundCrash = new Howl({src: ['sound/crash.mp3'],volume: 0.4});
+const soundHh = new Howl({src: ['sound/hh.mp3']});
+const soundKick = new Howl({src: ['sound/kick.mp3']});
+const soundSnare = new Howl({src: ['sound/snare.mp3']});
+const soundTom = new Howl({src: ['sound/tom.mp3']});
 
 console.log ( soundCrash.volume() );
+
 
 
 // _____________ Obsługa zmiany tempa _________________ //
@@ -88,11 +91,10 @@ bpmDown.addEventListener('click',function(){
 })
 
 
-
-
 // _____________ Obsługa klawiszy _______________ //
 
 function keyPressed(ev) {
+    // ev.preventDefault();
 
     const keyTable = {
         99    : soundCrash,    // 99 - c
@@ -101,9 +103,47 @@ function keyPressed(ev) {
         115   : soundSnare,    // 115 - s 
         107   : soundKick      // 107 - k 
     };
+
+    // toglowanie koloru na keyboardzie
+    function whatToToggle (keyNb) {
+        keyboardKeys[keyNb].classList.toggle('tabs__btn--key-active');
+        setTimeout(function () {
+            keyboardKeys[keyNb].classList.toggle('tabs__btn--key-active')
+        }, 400);
+        console.log ( keyNb );
+    }
+
+    // const keyTablePressed = {
+    //     99    : whatToToggle(0),    // 99 - c
+    //     104   : whatToToggle(1),       // 104 - h
+    //     116   : whatToToggle(2),      // 116 - t
+    //     115   : whatToToggle(3),    // 115 - s 
+    //     107   : whatToToggle(4)      // 107 - k 
+
+    // };
         
     if (keyTable[ev.charCode]!== undefined) {
         keyTable[ev.charCode].play();
+        
+        // to powino działać, a nie działa... :( doweidzieć się dlaczego - już wiem dlaczego...
+        // bo wywołuję funkcj w zmiennej / tabeli keyTablePressed....
+        // keyTablePressed[ev.charCode];
+
+        // brzydkie rozwiązanie:
+        
+        if (ev.charCode === 99) {
+            whatToToggle(0);
+        } else if (ev.charCode === 104){
+            whatToToggle(1);
+        } else if (ev.charCode === 116){
+            whatToToggle(2);
+        } else if (ev.charCode === 115){
+            whatToToggle(3);
+        } else if (ev.charCode === 107){
+            whatToToggle(4);
+        }
+        
+
     } else {
         console.log ( 'nieobsługiwany' );
     }
@@ -170,12 +210,6 @@ function playMusic() {
         if (counter === 9) {
             counter = 1;
         }
-
-        
-        
-
-
-
     
 }
 
@@ -184,6 +218,7 @@ function playMusic() {
 let timelineTravers = false;
 
 function chooseMusic(ev) {
+    ev.preventDefault();
 
     if(timelineTravers !== false) {
         clearInterval(timelineTravers);
@@ -201,6 +236,10 @@ function chooseMusic(ev) {
             cellsColums[i][j].innerHTML = '' ;
         }
     }
+
+    //zmiana ikonki pause / play
+    this.classList.toggle('controls-pause');
+
 
 
 }
@@ -227,12 +266,15 @@ for (let i=0;i<timeline.length;i++) {
 }
 
 
+
 // on / off kwadratu na boardzie (click)
 
 allCells.addEventListener('click',function(ev){
+    ev.preventDefault();
 
-    if (ev.target.hasAttribute('id')) {
-        // zasadniczo to jest słabe.. gdyż jeśłi pojawi się inny td z id to się sypnie. Było na data set x, ale ponieważ nie mogę wyszukać we wcześniejszym kroku tego, więc zmieniłem
+    
+    if (ev.target.id.includes('x')) {
+        // zasadniczo nie jest najlepsze bo jeśli inny id będzie zawierał x to się też złapie...
 
 
         ev.target.dataset.active = '1'; 

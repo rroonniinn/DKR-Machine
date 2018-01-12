@@ -40,7 +40,7 @@
 .tabs__btn--key {
     background: transparent;
     border: 0px; 
-    // cursor:pointer;
+    cursor:pointer;
 }
 
 .tabs__inst-svg {
@@ -73,11 +73,11 @@
         left: 2px;
         transition: 0.4s all;
     }
+}
 
-    // &:hover::after{
-    //     content: "";
-    //     border-color: #D01D1B; 
-    // }
+.tabs__btn--key-active {
+        background-color: #EA3E3A;
+        color: white;
 }
 
 .tabs-table__cell--active {
