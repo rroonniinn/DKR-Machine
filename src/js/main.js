@@ -24,6 +24,8 @@ const cellsColums = [
 const keyboardKeys = document.querySelectorAll('[id^=btn-key-]');
 // console.log ( keyboardKeys );
 
+const instrumentsBtns = document.querySelectorAll('[id^=btn-inst]');
+
 
 // Funkcje startowe
 
@@ -44,13 +46,17 @@ let mms = bpmToMms(tempo);
 //  Biblioteka dzięków (Howler)
 
 const soundCrash = new Howl({src: ['sound/crash.mp3'],volume: 0.4});
-const soundHh = new Howl({src: ['sound/hh.mp3']});
+const soundHh = new Howl({src: ['sound/hh.mp3'],volume: 1});
 const soundKick = new Howl({src: ['sound/kick.mp3']});
 const soundSnare = new Howl({src: ['sound/snare.mp3']});
 const soundTom = new Howl({src: ['sound/tom.mp3']});
 
-console.log ( soundCrash.volume() );
-
+// brzydkie ... inicjacja volumenu
+let soundCrashFlag = 'on';
+let soundHhFlag = 'on';
+let soundKickFlag = 'on';
+let soundSnareFlag = 'on';
+let soundTomFlag = 'on';
 
 
 // _____________ Obsługa zmiany tempa _________________ //
@@ -157,10 +163,10 @@ document.addEventListener('keypress',keyPressed);
 
 const timeline = [
     [0,0,0,0,0,0,0,0], // crash
-    [1,0,1,0,1,0,1,0], // hh
-    [0,1,0,1,0,1,0,1], // tom
+    [1,1,1,1,1,1,1,1], // hh
+    [0,0,0,0,0,0,0,0], // tom
     [0,0,1,0,0,0,1,0], // snare
-    [1,0,0,1,1,0,0,0], // kick
+    [1,0,0,0,1,0,0,0], // kick
 ]
 
 // _____________ Obsługa głowicy ____________ //
@@ -293,23 +299,74 @@ allCells.addEventListener('click',function(ev){
         } else {
             timeline[yCord][xCord] = 0;
         }
-
     }
-    
-     
-
-     
-
-    
-
 })
 
 
+// Obsługa MUTE instrumentu:
+
+for (let i=0;i<instrumentsBtns.length;i++) {
+   
+    instrumentsBtns[i].addEventListener('click', function(ev) {
+        this.classList.toggle('tabs__btn--icon-notactive');
+
+    
+        
+        if (this.id === 'btn-inst1' && soundCrashFlag === 'on') {
+            soundCrash.volume(0);
+            soundCrashFlag = 'off'
+        } else if (this.id === 'btn-inst1' && soundCrashFlag === 'off') {
+            soundCrash.volume(0.4);
+            soundCrashFlag = 'on'
+        }
+
+        if (this.id === 'btn-inst2' && soundHhFlag === 'on') {
+            soundHh.volume(0);
+            soundHhFlag = 'off'
+        } else if (this.id === 'btn-inst2' && soundHhFlag === 'off') {
+            soundHh.volume(1);
+            soundHhFlag = 'on'
+        }
+
+        if (this.id === 'btn-inst3' && soundTomFlag === 'on') {
+            soundTom.volume(0);
+            soundTomFlag = 'off'
+        } else if (this.id === 'btn-inst3' && soundTomFlag === 'off') {
+            soundTom.volume(1);
+            soundTomFlag = 'on'
+        }
+
+        if (this.id === 'btn-inst4' && soundSnareFlag === 'on') {
+            soundSnare.volume(0);
+            soundSnareFlag = 'off'
+        } else if (this.id === 'btn-inst4' && soundSnareFlag === 'off') {
+            soundSnare.volume(1);
+            soundSnareFlag = 'on'
+        }
 
 
 
+        if (this.id === 'btn-inst5' && soundKickFlag === 'on') {
+            soundKick.volume(0);
+            soundKickFlag = 'off'
+        } else if (this.id === 'btn-inst5' && soundKickFlag === 'off') {
+            soundKick.volume(1);
+            soundKickFlag = 'on'
+        }
+
+      
+        
+        
+    })
+}
 
 
+
+// let ;
+// let  = 'on';
+// let soundKickFlag = 'on';
+// let soundSnareFlag = 'on';
+// let soundTomFlag = 'on';
 
 
 
