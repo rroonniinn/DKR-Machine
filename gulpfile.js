@@ -43,7 +43,7 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream({match: "**/*.css"}));
   });
 
-  gulp.task('jsCompress', function (cb) {
+  gulp.task('jsCompressEs5', function (cb) {
     pump([
           gulp.src('./src/js/main.js'),
           sourcemaps.init(),
@@ -58,12 +58,12 @@ gulp.task('sass', function () {
 
   gulp.task('watch', function () {
     gulp.watch('./src/scss/**/*.scss', ['sass']);
-    gulp.watch('./src/js/**/*.js', ['jsCompress']).on("change", browserSync.reload);
+    gulp.watch('./src/js/**/*.js', ['jsCompressEs5']).on("change", browserSync.reload);
     gulp.watch("**/*.html").on("change", browserSync.reload);
   });
 
 
 gulp.task('default', function() {
     console.log ('------ Rozpoczynamy pracę -----');
-    gulp.start(['sass','jsCompress','server','watch']);
+    gulp.start(['sass','jsCompressEs5','server','watch']);
 })

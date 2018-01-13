@@ -362,23 +362,6 @@ for (let i=0;i<instrumentsBtns.length;i++) {
 
 
 
-// let ;
-// let  = 'on';
-// let soundKickFlag = 'on';
-// let soundSnareFlag = 'on';
-// let soundTomFlag = 'on';
-
-
-
-
-
-
-
-
-
-
-
-
 
 }) 
 
