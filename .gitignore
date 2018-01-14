@@ -58,8 +58,11 @@ typings/
 .env
 
 # dist files
-dist/css
-dist/js
+v0.01/dist/css
+v0.01/dist/js
+v0.02/dist/css
+v0.02/dist/js
+
 
 # package-lock.json
 package-lock.json

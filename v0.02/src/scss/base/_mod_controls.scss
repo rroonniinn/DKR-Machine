@@ -1,0 +1,103 @@
+
+
+
+.controls-panel {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    // @include borderMark(blue);
+
+    
+    .controls-play {
+
+        @include playButton();
+
+        &:after {
+            content: "";
+            display: block;
+            background-image: url('../img/btn-arrow.svg');
+            background-repeat: no-repeat;
+            height: 32px;
+            width: 28px;
+            z-index: 3;
+            position: absolute;
+            left:34px;  
+            top: 29px; 
+        }
+        
+        &:hover {
+            transform: translate(-50%) scale(.9,.9);
+        }
+    }
+
+    // togluję tym w JS po klikniciu na button play
+    .controls-pause {
+
+        @include playButton();
+        background-image: linear-gradient(-180deg, #D01D1B 0%, #D01D1B 100%);
+
+        &:after {
+            content: "";
+            display: block;
+            background-image: url('../img/pause.svg');
+            background-repeat: no-repeat;
+            height: 32px;
+            width: 28px;
+            z-index: 3;
+            position: absolute;
+            left:34px;  
+            top: 29px; 
+        }
+        
+        &:hover {
+            transform: translate(-50%) scale(1.1,1.1);
+        }
+    }
+
+
+
+
+
+    .controls-tempo {
+
+        margin-top: 100px;
+        display: flex;
+        // width: 200px;
+
+        button {
+            color: #D01D1B;
+            width: 90px;
+            height: 60px;
+            font-family: 'Overpass Mono', monospace;
+            font-size: 50px;
+            letter-spacing: 0;
+            border: none;
+            background: transparent;
+            cursor:pointer;
+            transition: 0.4s all;
+
+            &:hover {
+                // background-color: red;
+                transform: scale(2,2);
+            }
+        }
+
+        .controls-tempo-bpm {
+            width: 110px;
+            text-align: center;
+            font-family: 'Overpass Mono', monospace;
+            font-size: 40px;
+            color: #717171;
+            border: none;
+        }
+
+    }
+
+}
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="238px" height="265px" viewBox="0 0 238 265" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>05. Kick</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Ikony" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="05.-Kick" transform="translate(1.000000, 4.000000)">
+            <ellipse id="Oval-2" stroke="#000000" stroke-width="7" fill="#FFFFFF" cx="116.5" cy="96.5" rx="111.5" ry="96.5"></ellipse>
+            <polygon id="Rectangle" fill="#000000" points="3.16216216 91 230.837838 91.7959184 234 130 0 130"></polygon>
+            <ellipse id="Oval-2-Copy" stroke="#000000" stroke-width="7" fill="#FFFFFF" cx="118" cy="134.5" rx="115" ry="104.5"></ellipse>
+            <ellipse id="Oval-2-Copy-2" stroke="#000000" stroke-width="4" fill="#FFFFFF" cx="117.5" cy="135.5" rx="105.5" ry="96.5"></ellipse>
+            <path d="M118,30 L118,0" id="Path-5" stroke="#000000" stroke-width="4"></path>
+            <g id="Group-2" transform="translate(24.000000, 30.000000)" stroke="#000000" stroke-width="4">
+                <path d="M12.6638298,0 L0,42" id="Path-6"></path>
+                <path d="M186,0 L173.33617,42" id="Path-6-Copy" transform="translate(179.668085, 21.000000) scale(-1, 1) translate(-179.668085, -21.000000) "></path>
+            </g>
+            <rect id="Rectangle-2" fill="#000000" x="112" y="173" width="10" height="88" rx="5"></rect>
+            <circle id="Oval-3" fill="#000000" cx="118" cy="172" r="14"></circle>
+        </g>
+    </g>
+</svg>

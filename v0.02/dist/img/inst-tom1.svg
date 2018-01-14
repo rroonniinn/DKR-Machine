@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="288px" height="210px" viewBox="0 0 288 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>02. Tom 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Ikony" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02.-Tom-1" transform="translate(0.000000, -33.000000)">
+            <ellipse id="02.-Tom-1-Rim-Copy-7" stroke="#000000" stroke-width="11" cx="144" cy="170.5" rx="138" ry="39.5"></ellipse>
+            <ellipse id="02.-Tom-1-Rim-Copy-13" stroke="#000000" stroke-width="4" cx="144.5" cy="168" rx="120.5" ry="25"></ellipse>
+            <text id="1-copy" stroke="#FFFFFF" stroke-width="3" font-family="Futura-CondensedExtraBold, Futura" font-size="150" font-style="condensed" font-weight="700" fill="#000000">
+                <tspan x="99" y="151">1</tspan>
+            </text>
+            <g id="Group-4-Copy-5" transform="translate(0.000000, 170.000000)" stroke="#000000" stroke-width="6">
+                <path d="M3,0 L3,73" id="Path-4"></path>
+                <path d="M284,0 L284,73" id="Path-4-Copy"></path>
+            </g>
+        </g>
+    </g>
+</svg>
