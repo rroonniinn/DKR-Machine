@@ -1,0 +1,34 @@
+
+
+// Mobile Portrait
+@media (orientation: portrait) and (max-width:534px) {
+    .mobile-portrait {
+        display: block;
+    }
+}
+
+// HD Narrow
+@media (min-height:600px) and (min-width:1200px) {
+    .playhead-controls {
+        display: block;
+    }
+}
+
+// HD
+@media (min-height:900px) and (min-width:900px) {
+    .app {
+        display: block;
+    }
+    .playhead-controls {
+        display: block;
+        height: auto;
+    }
+}
+
+// To narrow space
+@media (max-height:320px) {
+    .to-narrow-space {
+        display: block;
+    }
+
+}

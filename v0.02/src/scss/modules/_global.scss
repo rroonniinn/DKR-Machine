@@ -1,0 +1,56 @@
+
+/* __________Global vars__________ */
+
+$font-stack: 'Overpass Mono', monospace;
+
+
+
+body {
+    font-family: $font-stack;
+}
+
+
+.app {
+    display: flex; // dla Widoku HD przełączone na "block"
+
+
+}
+
+.to-narrow-space {
+    background: brown;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: none; // Dla okna < 320px zmienia się na "block"
+
+}
+
+.mobile-portrait {
+    background: red;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: none;  // Dla orintacji poziomej poniżej 534px szerokości zmiana na "block"
+
+}
+
+.to-narrow-space,
+.mobile-portrait,
+.playhead-controls,
+.board {
+    padding: 2em;
+}
+
+.playhead-controls {
+    background: blue;
+    color: white;
+    height: 100vh; // dla widoku HD przełączone na "auto"
+    display: none; // dla widoku HD i HD Narrow przełączone na "block"
+}
+
+
+
+
+
+
+
