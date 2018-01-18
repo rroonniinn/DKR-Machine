@@ -67,5 +67,10 @@ v0.02/dist/js
 # package-lock.json
 package-lock.json
 
-.vscode
-.vscode/settings.json
+
+# VSC files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
