@@ -1,5 +1,5 @@
 {
-  "name": "konfiguracja_pod_gulp",
+  "name": "konfiguracja_pod_gulp_vexflow",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -22,5 +22,7 @@
     "babel-core": "^6.26.0",
     "pump": "^2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vexflow": "^1.2.84"
+  }
 }
