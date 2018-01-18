@@ -67,4 +67,5 @@ v0.02/dist/js
 # package-lock.json
 package-lock.json
 
-.vscode/
+.vscode
+.vscode/settings.json
